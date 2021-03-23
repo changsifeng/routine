@@ -1,11 +1,11 @@
 package com.gyf.daily.practice.service;
 
+import com.alibaba.fastjson.JSONArray;
 import com.gyf.daily.practice.dos.BeanExample;
 import com.ql.util.express.DefaultContext;
 import com.ql.util.express.ExpressRunner;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,12 +50,9 @@ public class QLService {
     
     @Test
     public void list(){
-        List<String> strings = new ArrayList<>();
-        strings.add("a");
-        strings.add("b");
-        strings.add("c");
-        strings.add("d");
-        System.out.println(strings.toString());
+        String s = "[1,3,33,45,6,6]";
+        List<String> strings1 = JSONArray.parseArray(s, String.class);
+        System.out.println(strings1);
 
     }
 
